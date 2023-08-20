@@ -1,5 +1,6 @@
 import { type Message, ThreadAutoArchiveDuration } from 'discord.js';
 import ogs from 'open-graph-scraper';
+
 import { getVideoSummary } from './summarize-cool-videos';
 
 const getThreadNameFromOpenGraph = async (url: string): Promise<string | null> => {

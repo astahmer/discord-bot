@@ -1,7 +1,7 @@
 const baseUrl = 'https://www.summarize.tech/api/summary';
 
 export const getVideoSummary = async (videoUrl: string) => {
-  const summary = await fetch(baseUrl, {
+  return await fetch(baseUrl, {
     method: 'POST',
     body: JSON.stringify({ url: videoUrl, deviceId: makeId(21) }),
     headers: { 'content-type': 'application/json' },
@@ -12,8 +12,6 @@ export const getVideoSummary = async (videoUrl: string) => {
         .map((chunk) => chunk.summary)
         .join(' '),
     );
-
-  return summary;
 };
 
 const makeId = (length: number) => {
